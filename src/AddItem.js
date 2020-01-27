@@ -26,13 +26,13 @@ const AddItem = (props) => {
     }
 
     const amountChangedHandler = event => {
-      setEnteredAmount(event.target.value)
+      setEnteredAmount(parseInt(event.target.value))
     }
 
     return (
         <form onSubmit={addItemHandler} className="add-item">
-            <input placeholder="Item name" type="text" value={enteredNameText} onChange={nameChangedHandler} /><br />
-            <input placeholder="Amount" type="number" value={enteredAmount} onChange={amountChangedHandler} />
+            <input placeholder="Item name" type="text" value={enteredNameText} onChange={nameChangedHandler} required/><br />
+            <input placeholder="Amount" type="number" value={enteredAmount} onChange={amountChangedHandler} required/>
             <button type="submit">Add grocery to list</button>
         </form>
     )

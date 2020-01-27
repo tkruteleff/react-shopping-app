@@ -1,22 +1,25 @@
 import React from 'react';
 
 import './ListItems.css'
+import Button from './Button';
 
 const ListItems = (props) => {
 
+    const listItems = props.allItems.map((item, index) => (
+        <li key={item.id}>
+            <label>{item.name} {item.amount}</label>
+            <Button 
+                increased={() => props.increaseAmount(index)}
+                decreased={() => props.decreaseAmount(index)}
+                checked={() => props.checkItem(item.id)}
+                removed={() => props.removeItem(item.id)}/>
+        </li>
+    ))
+
     return (
-            <ul className="list-items">
-                {props.allItems.map((item) => {
-                    return (
-                        <div>
-                            <li key={item.id}>{item.name} {item.amount}</li>
-                            <button>Inc</button>
-                            <button>Dec</button>
-                            <button>Check</button>
-                        </div>
-                    )
-                })}
-            </ul>
+        <ul className="list-items">
+            {listItems}
+        </ul>
     );
 };
 
