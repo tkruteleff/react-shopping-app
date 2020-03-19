@@ -12,7 +12,8 @@ const AddItem = (props) => {
       const newItem = {
         id: Math.random().toString(),
         name: enteredNameText,
-        amount: enteredAmount
+        amount: enteredAmount,
+        checked: false
       };
 
       setEnteredNameText('');

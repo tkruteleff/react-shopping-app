@@ -1,24 +1,27 @@
 import React, { useState } from 'react';
 
-import AddItem from './AddItem';
-import ListItems from './ListItems';
+import AddItem from './Components/AddItem/AddItem';
+import ListItems from './Components/ListItems/ListItems';
 
 const App = () => {
   const [shoppingItems, setShoppingItems] = useState([
     {
     id: 1,
     name: "Milk",
-    amount: 1
+    amount: 1,
+    checked: false
   },
   {
     id: 2,
     name: "Banana",
-    amount: 2 
+    amount: 2,
+    checked: false
   },
   {
     id: 3,
     name: "Juice",
-    amount: 3
+    amount: 3,
+    checked: false
   }
   ]);
 
@@ -40,12 +43,19 @@ const App = () => {
     setShoppingItems(updatedList);
   };
 
-  const checkItemHandler = (id) => {
+  const checkItemHandler = (index) => {
     console.log('[CheckHandler] log')
+    const updatedChecked = [...shoppingItems];
+    updatedChecked[index].checked = true;
+    setShoppingItems(updatedChecked);
   };
 
-  const removeItemHandler = (id) => {
-    console.log('[RemoveHandler] log')
+  const removeItemHandler = (index) => {
+    const removeItem = [...shoppingItems];
+    removeItem.splice(index, 1);
+    setShoppingItems(removeItem);
+    console.log('[RemoveHandler] log', shoppingItems);
+
   };
 
   return (

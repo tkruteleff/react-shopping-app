@@ -4,7 +4,10 @@ To-Do list:
 - [ ] If user does not input the amount, set to one by default
 - [x] Add Increase, Decrease, Delete and Check buttons next to each list item
 - [x] Add functionality to said buttons
-- [ ] Add styling to the buttons listed above
+- [x] Add styling to the buttons listed above
+- [x] Rebuild Button component functionality
+- [ ] Align list items to left and make a separation between the item, amount and buttons
 - [ ] Add date when list created to List Items component
-- [ ] Add authentication
+- [ ] Create a main page component where you can navigate to previous lists, create new list etc.
 - [ ] Create a component that shows lists that have been completed
+- [ ] Add authentication

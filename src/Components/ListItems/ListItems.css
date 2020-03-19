@@ -1,0 +1,22 @@
+.list-items {
+    border-top: 1px solid black;
+}
+
+.list-items ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    list-style-type: none;
+}
+
+.list-items li {
+    display: inline-flex;
+    justify-content: left;
+}
+
+.list-items p, button {
+    display: inline-flex;
+    justify-content: left;
+}
+
