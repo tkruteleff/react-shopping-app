@@ -1,4 +1,4 @@
-.list-items {
+.list-items-top {
     border-top: 1px solid black;
 }
 
@@ -18,5 +18,6 @@
 .list-items p, button {
     display: inline-flex;
     justify-content: left;
+    text-align: center;
 }
 

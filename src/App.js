@@ -4,26 +4,29 @@ import AddItem from './Components/AddItem/AddItem';
 import ListItems from './Components/ListItems/ListItems';
 
 const App = () => {
-  const [shoppingItems, setShoppingItems] = useState([
+  const [shoppingItems, setShoppingItems] = useState({
+    listId: 1,
+    listName: "Test List",
+    items: [
+      {
+      id: 1,
+      name: "Milk",
+      amount: 1,
+      checked: false
+    },
     {
-    id: 1,
-    name: "Milk",
-    amount: 1,
-    checked: false
-  },
-  {
-    id: 2,
-    name: "Banana",
-    amount: 2,
-    checked: false
-  },
-  {
-    id: 3,
-    name: "Juice",
-    amount: 3,
-    checked: false
-  }
-  ]);
+      id: 2,
+      name: "Banana",
+      amount: 2,
+      checked: false
+    },
+    {
+      id: 3,
+      name: "Juice",
+      amount: 3,
+      checked: false
+    }
+  ]});
 
   const addNewItemHandler = (newItem) => {
     setShoppingItems([...shoppingItems, newItem])
@@ -61,7 +64,6 @@ const App = () => {
   return (
     <div>
       <AddItem onAddNewItem={addNewItemHandler}/>
-      <p style={{textAlign: "center"}}>Name Amount</p>
       <ListItems 
         allItems={shoppingItems}
         increaseAmount={increaseAmountHandler}

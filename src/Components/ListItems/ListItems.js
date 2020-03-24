@@ -6,7 +6,8 @@ import Button from '../UI/Button';
 const ListItems = (props) => {
 
     const listItems = props.allItems.map((item, index) => (
-        <li key={item.id}>
+        <p key={item.listId}>{item.listName}</p>
+        /*<li key={item.id}>
             {item.checked ? (<label><s>{item.name} {item.amount}</s></label>) : (<p>{item.name} {item.amount}</p>)}
              <div>
                 <Button 
@@ -22,14 +23,17 @@ const ListItems = (props) => {
                     value={() => props.removeItem(index)}
                     label="del"/>
              </div>
-        </li>
+        </li>*/
     ));
 
     return (
-        <div className="list-items">
-            <ul>
-                {listItems}
-            </ul>
+        <div className="list-items-top">
+            <p style={{textAlign: "center"}}>Name Amount</p>
+            <div className="list-items">
+                <ul>
+                    {listItems}
+                </ul>
+            </div>
         </div>
     );
 };
