@@ -4,7 +4,7 @@ import AddItem from './Components/AddItem/AddItem';
 import ListItems from './Components/ListItems/ListItems';
 
 const App = () => {
-  const [shoppingItems, setShoppingItems] = useState({
+  const [shoppingItems, setShoppingItems] = useState([{
     listId: 1,
     listName: "Test List",
     items: [
@@ -26,7 +26,7 @@ const App = () => {
       amount: 3,
       checked: false
     }
-  ]});
+  ]}]);
 
   const addNewItemHandler = (newItem) => {
     setShoppingItems([...shoppingItems, newItem])
