@@ -1,0 +1,19 @@
+.Button {
+    font-weight: bold;
+}
+
+.Increase {
+    color: #3399ff;
+}
+
+.Decrease {
+    color: #ff3333
+}
+
+.Check {
+    color: #66ff33
+}
+
+.Delete {
+    color: #cc0000
+}

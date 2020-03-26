@@ -15,15 +15,19 @@ const ListItems = (props) => {
                     {item.checked ? (<><td><s>{item.name}</s></td> <td><s>{item.amount}</s></td></>) : (<><td>{item.name}</td> <td>{item.amount}</td></>)}
                     <td>
                     <Button 
+                        btnType="Increase"
                         value={() => props.increaseAmount(item.id)}
                         label="+" />
-                    <Button 
+                    <Button
+                        btnType="Decrease" 
                         value={() => props.decreaseAmount(item.id)}
                         label="-"/>
                     <Button 
+                        btnType="Check"
                         value={() => props.checkItem(item.id)}
                         label="v"/>
                     <Button 
+                        btnType="Delete"
                         value={() => props.removeItem(item.id)}
                         label="del"/>
                     </td>
