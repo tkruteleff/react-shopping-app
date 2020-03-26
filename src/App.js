@@ -9,24 +9,24 @@ const App = () => {
     listName: "Test List",
     items: [
       {
-      id: 1,
-      name: "Milk",
-      amount: 1,
-      checked: false
-    },
-    {
-      id: 2,
-      name: "Banana",
-      amount: 2,
-      checked: false
-    },
-    {
-      id: 3,
-      name: "Juice",
-      amount: 3,
-      checked: false
-    }
-  ]}]);
+        id: 1,
+        name: "Milk",
+        amount: 1,
+        checked: false
+      },
+      {
+        id: 2,
+        name: "Banana",
+        amount: 2,
+        checked: false
+      },
+      {
+        id: 3,
+        name: "Juice",
+        amount: 3,
+        checked: false
+      },
+    ]}]);
 
   const addNewItemHandler = (newItem) => {
     setShoppingItems([...shoppingItems, newItem])
@@ -35,21 +35,21 @@ const App = () => {
 
   const increaseAmountHandler = (index) => {
     console.log(shoppingItems)
-    const updatedList = [...shoppingItems];
+    const updatedList = [...shoppingItems.items];
     updatedList[index].amount = updatedList[index].amount + 1;
     setShoppingItems(updatedList);
   };
   
   const decreaseAmountHandler = (index) => {
     const updatedList = [...shoppingItems];
-    updatedList[index].amount = updatedList[index].amount - 1;
+    updatedList[index].items[index].amount = updatedList[index].items[index].amount - 1;
     setShoppingItems(updatedList);
   };
 
   const checkItemHandler = (index) => {
     console.log('[CheckHandler] log')
     const updatedChecked = [...shoppingItems];
-    updatedChecked[index].checked = true;
+    updatedChecked[index].items[index].checked = true;
     setShoppingItems(updatedChecked);
   };
 

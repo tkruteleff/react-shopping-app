@@ -5,64 +5,38 @@ import Button from '../UI/Button';
 
 const ListItems = (props) => {
 
-    console.log(props)
-
-    const fullLists = props.allItems.map((fullList, index) => (
-        <>
-            <h1 key={fullList.listId}>{fullList.listName}</h1>
-            {fullList.map(items => (
-                <li key={items.id}>
-                    {items.checked ? (<label><s>{items.name} {items.amount}</s></label>) : (<p>{items.name} {items.amount}</p>)}
-                    <div>
+    const fullLists = props.allItems.map((fullList) => (
+        <div key={fullList.listId}>
+            <h1>{fullList.listName}</h1>
+            <p>Name Amount</p>
+            <table>
+            {fullList.items.map((item) => (
+                <tr key={item.id}>
+                    {item.checked ? (<><td><s>{item.name}</s></td> <td><s>{item.amount}</s></td></>) : (<><td>{item.name}</td> <td>{item.amount}</td></>)}
+                    <td>
                     <Button 
-                        value={() => props.increaseAmount(index)}
+                        value={() => props.increaseAmount(item.id)}
                         label="+" />
                     <Button 
-                        value={() => props.decreaseAmount(index)}
+                        value={() => props.decreaseAmount(item.id)}
                         label="-"/>
                     <Button 
-                        value={() => props.checkItem(index)}
+                        value={() => props.checkItem(item.id)}
                         label="v"/>
                     <Button 
-                        value={() => props.removeItem(index)}
+                        value={() => props.removeItem(item.id)}
                         label="del"/>
-                    </div>
-                </li>
+                    </td>
+                </tr>
             ))}
-        </>
+            </table>
+        </div>
         )
     );
 
-    /*const listItems = props.allItems.map((item, index) => (
-        <>
-            <li key={item.items.id}>
-                {item.items.checked ? (<label><s>{item.items.name} {item.items.amount}</s></label>) : (<p>{item.items.name} {item.items.amount}</p>)}
-                <div>
-                    <Button 
-                        value={() => props.increaseAmount(index)}
-                        label="+" />
-                    <Button 
-                        value={() => props.decreaseAmount(index)}
-                        label="-"/>
-                    <Button 
-                        value={() => props.checkItem(index)}
-                        label="v"/>
-                    <Button 
-                        value={() => props.removeItem(index)}
-                        label="del"/>
-                </div>
-            </li>
-        </>
-    ));*/
-
     return (
-        <div className="list-items-top">
-            <p style={{textAlign: "center"}}>Name Amount</p>
-            <div className="list-items">
-                <ul>
-                    {fullLists}
-                </ul>
-            </div>
+        <div className="list-items">
+            {fullLists}
         </div>
     );
 };
