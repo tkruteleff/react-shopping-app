@@ -10,29 +10,27 @@ const ListItems = (props) => {
             <h1>{fullList.listName}</h1>
             <p>Name Amount</p>
             <table>
-            {fullList.items.map((item) => (
-                <tr key={item.id}>
-                    {item.checked ? (<><td><s>{item.name}</s></td> <td><s>{item.amount}</s></td></>) : (<><td>{item.name}</td> <td>{item.amount}</td></>)}
-                    <td>
-                    <Button 
-                        btnType="Increase"
-                        value={() => props.increaseAmount(item.id)}
-                        label="+" />
-                    <Button
-                        btnType="Decrease" 
-                        value={() => props.decreaseAmount(item.id)}
-                        label="-"/>
-                    <Button 
-                        btnType="Check"
-                        value={() => props.checkItem(item.id)}
-                        label="v"/>
-                    <Button 
-                        btnType="Delete"
-                        value={() => props.removeItem(item.id)}
-                        label="del"/>
-                    </td>
-                </tr>
-            ))}
+                <tbody>
+                    {fullList.items.map((item) => (
+                        <tr key={item.id}>
+                            {item.checked ? (<><td><s>{item.name}</s></td><td><s>{item.amount}</s></td></>) : (<><td>{item.name}</td><td>{item.amount}</td></>)}
+                            <td>
+                            <Button 
+                                btnType="Increase"
+                                clicked={() => props.increaseAmount(item.id)}>+</Button>
+                            <Button
+                                btnType="Decrease" 
+                                clicked={() => props.decreaseAmount(item.id)}>-</Button>
+                            <Button 
+                                btnType="Check"
+                                clicked={() => props.checkItem(item.id)}>v</Button>
+                            <Button 
+                                btnType="Delete"
+                                clicked={() => props.removeItem(item.id)}>del</Button>
+                            </td>
+                        </tr>
+                    ))}
+                </tbody>
             </table>
         </div>
         )

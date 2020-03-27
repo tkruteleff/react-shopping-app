@@ -2,18 +2,23 @@
     font-weight: bold;
 }
 
+.Button:first-of-type {
+    margin-left: 0;
+    padding-left: 0;
+}
+
 .Increase {
-    color: #3399ff;
+    background-color: #3399ff;
 }
 
 .Decrease {
-    color: #ff3333
+    background-color: #ff3333
 }
 
 .Check {
-    color: #66ff33
+    background-color: #66ff33
 }
 
 .Delete {
-    color: #cc0000
+    background-color: #cc0000
 }
