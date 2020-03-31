@@ -1,7 +1,7 @@
 import React from 'react';
 
 import './ListItems.css'
-import Button from '../UI/Button';
+import Button from '../UI/Button/Button';
 
 const ListItems = (props) => {
 
