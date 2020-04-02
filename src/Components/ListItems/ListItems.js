@@ -5,7 +5,7 @@ import Button from '../UI/Button/Button';
 
 const ListItems = (props) => {
 
-    const fullLists = props.allItems.map((fullList) => (
+    /*const fullLists = props.allItems.map((fullList) => (
         <div key={fullList.listId}>
             <h1>{fullList.listName}</h1>
             <p>Name Amount</p>
@@ -34,11 +34,10 @@ const ListItems = (props) => {
             </table>
         </div>
         )
-    );
+    );*/
 
     return (
         <div className="list-items">
-            {fullLists}
         </div>
     );
 };

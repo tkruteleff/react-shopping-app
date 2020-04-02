@@ -5,12 +5,13 @@ import AddList from '../../Components/AddList/AddList'
 import ListItems from '../../Components/ListItems/ListItems'
 
 const ShoppingApp = () => {
-    const [shoppingItems, setShoppingItems] = useState([{
-        listId: 1,
+    const [shoppingItems, setShoppingItems] = useState([{}]);
+
+    /*listId: 1,
         listName: "Test List",
         active: true,
         items: [
-          /*{
+          {
             id: 1,
             name: "Milk",
             amount: 1,
@@ -27,8 +28,13 @@ const ShoppingApp = () => {
             name: "Juice",
             amount: 3,
             checked: false
-          },*/
-    ]}]);
+          },
+    ]*/
+
+    const addNewListHandler = (newList) => {
+        setShoppingItems([...shoppingItems, newList])
+        console.log(shoppingItems)
+    }
 
     const addNewItemHandler = (newItem) => {
         setShoppingItems([...shoppingItems[0].items, newItem])
@@ -65,7 +71,7 @@ const ShoppingApp = () => {
 
     return (
         <div>
-            <AddList />
+            <AddList onAddNewList={addNewListHandler}/>
             <AddItem onAddNewItem={addNewItemHandler}/>
             <ListItems 
                 allItems={shoppingItems}
