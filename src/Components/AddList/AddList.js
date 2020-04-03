@@ -37,7 +37,7 @@ const AddList = (props) => {
                 )}>
                 <form onSubmit={addListHandler}>
                     <input placeholder="List name" type="text" value={enteredListNameText} onChange={listNameChangedHandler}/><br/>
-                    <button type="submit">Create a new list</button>
+                    <button type="submit">Add</button>
                 </form>
             </Modal>
         </div>
