@@ -9,16 +9,20 @@
 
 .Increase {
     background-color: #3399ff;
+    color: #0c08fc;
 }
 
 .Decrease {
-    background-color: #ff3333
+    background-color: #ff3333;
+    color: #820707;
 }
 
 .Check {
-    background-color: #66ff33
+    background-color: #66ff33;
+    color: #057a1a;
 }
 
 .Delete {
-    background-color: #cc0000
+    background-color: #cc0000;
+    color: #850000;
 }

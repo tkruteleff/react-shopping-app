@@ -7,6 +7,7 @@ const App = () => {
   const [shoppingItems, setShoppingItems] = useState([{
     listId: 1,
     listName: "Test List",
+    active: true,
     items: [
       {
         id: 1,
@@ -33,11 +34,12 @@ const App = () => {
     //*setShoppingItems((prevShoppingList) => prevShoppingList.concat(newItem));
   };
 
-  const increaseAmountHandler = (index) => {
-    console.log(shoppingItems)
-    const updatedList = [...shoppingItems.items];
-    updatedList[index].amount = updatedList[index].amount + 1;
-    setShoppingItems(updatedList);
+  const increaseAmountHandler = (id) => {
+    console.log(id)
+    const updatedList = [...shoppingItems];
+    console.log(updatedList[0].items[id])
+    /*updatedList[0].items[id].amount = updatedList[0].items[id].amount + 1;
+    setShoppingItems(updatedList);*/
   };
   
   const decreaseAmountHandler = (index) => {
