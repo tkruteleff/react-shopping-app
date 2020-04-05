@@ -6,7 +6,8 @@ To-Do list:
 - [x] Add functionality to said buttons
 - [x] Add styling to the buttons listed above
 - [x] Rebuild Button component functionality
-- [ ] Align list items to left and make a separation between the item, amount and buttons
+- [x] Align list items to left and make a separation between the item, amount and buttons
+- [ ] Create a List component that lists all lists created
 - [ ] Add date when list created to List Items component
 - [ ] Create a main page component where you can navigate to previous lists, create new list etc.
 - [ ] Create a component that shows lists that have been completed

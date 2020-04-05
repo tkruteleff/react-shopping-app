@@ -33,7 +33,6 @@ const ShoppingApp = () => {
 
     const addNewListHandler = (newList) => {
         setShoppingItems([...shoppingItems, newList])
-        console.log(shoppingItems)
     }
 
     const addNewItemHandler = (newItem) => {

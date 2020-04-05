@@ -35,10 +35,8 @@ const AddList = (props) => {
                         Add a new List
                     </Button> 
                 )}>
-                <form onSubmit={addListHandler}>
-                    <input placeholder="List name" type="text" value={enteredListNameText} onChange={listNameChangedHandler}/><br/>
-                    <button type="submit">Add</button>
-                </form>
+                <input placeholder="List name" type="text" value={enteredListNameText} onChange={listNameChangedHandler} required/><br/>
+                <button type="button" onClick={addListHandler}>Add</button>
             </Modal>
         </div>
     )
